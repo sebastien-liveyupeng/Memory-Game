@@ -23,8 +23,8 @@ Memory Game est un jeu de mémoire classique où les joueurs doivent retrouver d
 ##  Structure du projet
 
 ```
-<img src="![image](https://github.com/user-attachments/assets/ea4b7c67-2a58-4c8f-a89e-01d51112ad68)
-" alt="structure-du-dossier">
+[<img src="![image](https://github.com/user-attachments/assets/ea4b7c67-2a58-4c8f-a89e-01d51112ad68)
+" alt="structure-du-dossier">](https://th.bing.com/th?id=OPEC.N5mJrx%2b%2f5NHsxQ474C474&w=200&h=213&rs=1&o=5&cb=iwc2&pid=21.1)
 ```
 
 ## Processus pour achever ce projet
