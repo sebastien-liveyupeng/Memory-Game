@@ -1,13 +1,23 @@
-// card component
-function Cards({ isFlipped, frontImage, backImage, onClick }) {
+function Cards({ cards, handleChoice, firstChoice, secondChoice, disabled }) {
+  const isFlipped = (card) =>
+    card === firstChoice || card === secondChoice || card.matched;
+
   return (
-    <div className="card" onClick={onClick}>
-      <img
-        src={isFlipped ? frontImage : backImage}
-        alt="Carte de mémoire"
-        className="card-image"
-      />
-    </div>
+    <>
+      {cards.map((card) => (
+        <div
+          className={`card${isFlipped(card) ? " flipped" : ""}`}
+          key={card.id}
+          onClick={() => !disabled && handleChoice(card)}
+        >
+          <img style={{ width: "180px", backgroundColor: "black" }}
+            src={isFlipped(card) ? card.img : "/src/assets/img/card-back.png"}
+            alt={isFlipped(card) ? card.name : ""}
+            className="card-image"
+          />
+        </div>
+      ))}
+    </>
   );
 }
 

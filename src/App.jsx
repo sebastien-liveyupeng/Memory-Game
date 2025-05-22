@@ -1,20 +1,21 @@
+// App.jsx
 import React, { useEffect, useState } from "react";
-// import GameBoard from "./components/GameBoard";
-import "./App.css";
+import GameBoard from "./pages/GameBoard";
+// import "./App.css";
 
 const pokemonList = [
-  { name: "absol", img: "/assets/img/absol.png" },
-  { name: "armaldo", img: "/assets/img/armaldo.png" },
-  { name: "bulbizare", img: "/assets/img/bulbizare.png" },
-  { name: "totdile", img: "/assets/img/totdile.png" },
-  { name: "chenipan", img: "/assets/img/chenipan.png" },
-  { name: "electro", img: "/assets/img/electro.png" },
-  { name: "fennekin", img: "/assets/img/fennekin.png" },
-  { name: "gengar", img: "/assets/img/gengar.png" },
-  { name: "hericendre", img: "/assets/img/hericendre.png" },
-  { name: "pachirisu", img: "/assets/img/pachirisu.png" },
-  { name: "phampy", img: "/assets/img/phampy.png" },
-  { name: "vulpix", img: "/assets/img/vulpix.png" }
+  { name: "absol", img: "/src/assets/img/absol.png" },
+  { name: "armaldo", img: "/src/assets/img/armaldo.png" },
+  { name: "bulbizare", img: "/src/assets/img/bulbizare.png" },
+  { name: "totodile", img: "/src/assets/img/totodile.png" },
+  { name: "chenipan", img: "/src/assets/img/chenipan.png" },
+  { name: "electro", img: "/src/assets/img/electro.png" },
+  { name: "fennekin", img: "/src/assets/img/fennekin.png" },
+  { name: "gengar", img: "/src/assets/img/gengar.png" },
+  { name: "hericendre", img: "/src/assets/img/hericendre.png" },
+  { name: "pachirisu", img: "/src/assets/img/pachirisu.png" },
+  { name: "phampy", img: "/src/assets/img/phampy.png" },
+  { name: "vulpix", img: "/src/assets/img/vulpix.png" }
 ];
 
 function App() {
@@ -70,8 +71,6 @@ function App() {
 
     return (
     <div className="App">
-      <h1>Pokémon Memory</h1>
-      <button onClick={shuffleCards}>Nouvelle partie</button>
       <GameBoard
         cards={cards}
         handleChoice={handleChoice}
@@ -79,18 +78,9 @@ function App() {
         secondChoice={secondChoice}
         disabled={disabled}
       />
+    <button onClick={shuffleCards}>Nouvelle partie</button>
     </div>
   );
 }
 
 export default App;
-
-
-  
-
-
-
-
-
-
-

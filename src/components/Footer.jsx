@@ -1,5 +1,3 @@
-import { Link } from "react-router-dom";
-
 const personsDefault = [
     { name: "Lamine", link: "https://github.com/mamadoulamine-diallo" },
     { name: "Sébastien", link: "https://github.com/sebastien-liveyupeng" },
