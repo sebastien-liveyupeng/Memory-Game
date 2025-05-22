@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import GameBoard from "./components/GameBoard";
+// import GameBoard from "./components/GameBoard";
 import "./App.css";
 
 const pokemonList = [
@@ -68,6 +68,24 @@ function App() {
     setDisabled(false);
   };
 
+    return (
+    <div className="App">
+      <h1>Pokémon Memory</h1>
+      <button onClick={shuffleCards}>Nouvelle partie</button>
+      <GameBoard
+        cards={cards}
+        handleChoice={handleChoice}
+        firstChoice={firstChoice}
+        secondChoice={secondChoice}
+        disabled={disabled}
+      />
+    </div>
+  );
+}
+
+export default App;
+
+
   
 
 
@@ -76,4 +94,3 @@ function App() {
 
 
 
-}
