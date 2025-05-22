@@ -10,10 +10,10 @@ function Cards({ cards, handleChoice, firstChoice, secondChoice, disabled }) {
           key={card.id}
           onClick={() => !disabled && handleChoice(card)}
         >
-          <img style={{ width: "180px", backgroundColor: "black" }}
-            src={isFlipped(card) ? card.img : "/src/assets/img/card-back.png"}
-            alt={isFlipped(card) ? card.name : ""}
+          <img 
             className="card-image"
+            src={isFlipped(card) ? card.img : "/src/assets/img/card-back.png"}
+            alt={isFlipped(card) ? card.name : "Dos de carte"}
           />
         </div>
       ))}

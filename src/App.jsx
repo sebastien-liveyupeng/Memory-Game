@@ -1,7 +1,5 @@
-// App.jsx
 import React, { useEffect, useState } from "react";
 import GameBoard from "./pages/GameBoard";
-// import "./App.css";
 
 const pokemonList = [
   { name: "absol", img: "/src/assets/img/absol.png" },
@@ -24,29 +22,29 @@ function App() {
   const [secondChoice, setSecondChoice] = useState(null);
   const [disabled, setDisabled] = useState(false);
 
-    const shuffleCards = () => {
+  const shuffleCards = () => {
     const duplicated = [...pokemonList, ...pokemonList];
     const shuffled = duplicated
       .map(card => ({ ...card, id: Math.random(), matched: false }))
       .sort(() => Math.random() - 0.5);
-    
+
     setCards(shuffled);
     setFirstChoice(null);
     setSecondChoice(null);
     setDisabled(false);
   };
 
-    useEffect(() => {
+  useEffect(() => {
     shuffleCards();
   }, []);
 
-    const handleChoice = (card) => {
+  const handleChoice = (card) => {
     if (!disabled) {
       firstChoice ? setSecondChoice(card) : setFirstChoice(card);
     }
   };
 
-    useEffect(() => {
+  useEffect(() => {
     if (firstChoice && secondChoice) {
       setDisabled(true);
 
@@ -63,13 +61,13 @@ function App() {
     }
   }, [firstChoice, secondChoice]);
 
-    const resetTurn = () => {
+  const resetTurn = () => {
     setFirstChoice(null);
     setSecondChoice(null);
     setDisabled(false);
   };
 
-    return (
+  return (
     <div className="App">
       <GameBoard
         cards={cards}
@@ -77,8 +75,8 @@ function App() {
         firstChoice={firstChoice}
         secondChoice={secondChoice}
         disabled={disabled}
+        onShuffle={shuffleCards}  
       />
-    <button onClick={shuffleCards}>Nouvelle partie</button>
     </div>
   );
 }
