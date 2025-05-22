@@ -35,6 +35,11 @@ function App() {
     setDisabled(false);
   };
 
+    useEffect(() => {
+    shuffleCards();
+  }, []);
+
+
 
 
 }
