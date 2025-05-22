@@ -23,7 +23,11 @@ Memory Game est un jeu de mémoire classique où les joueurs doivent retrouver d
                 <li>responsive Desing sur ordinateur , mobile et tablette </li>
 
 2 - Architecture du projet :
-![Architecture du projet](architecture.png)
+<p align="center">
+  <img src="architecture.png" alt="Architecture du projet" width="600">
+</p>
+
+
 
 
 
