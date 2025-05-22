@@ -22,4 +22,19 @@ function App() {
   const [firstChoice, setFirstChoice] = useState(null);
   const [secondChoice, setSecondChoice] = useState(null);
   const [disabled, setDisabled] = useState(false);
+
+    const shuffleCards = () => {
+    const duplicated = [...pokemonList, ...pokemonList];
+    const shuffled = duplicated
+      .map(card => ({ ...card, id: Math.random(), matched: false }))
+      .sort(() => Math.random() - 0.5);
+    
+    setCards(shuffled);
+    setFirstChoice(null);
+    setSecondChoice(null);
+    setDisabled(false);
+  };
+
+
+
 }
