@@ -62,6 +62,15 @@ function App() {
     }
   }, [firstChoice, secondChoice]);
 
+    const resetTurn = () => {
+    setFirstChoice(null);
+    setSecondChoice(null);
+    setDisabled(false);
+  };
+
+  
+
+
 
 
 
