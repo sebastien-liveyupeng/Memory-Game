@@ -1,16 +1,39 @@
+@font-face {
+  font-family: 'Pokemon';
+  src: url('assets/fonts/Pokemon-Solid.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Sora';
+  src: url('assets/fonts/Sora-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+  --title-font:"Pokemon";
+  --main-font:"Sora";
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  --primary-color--: #3C493F;
+  --secondary-color--: #1E352F;
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  --card--:#1E352F;
+
+  --text-color--: #FFFFFF;
+
+  --button-bg--:#FFCB00;
+  --button-corner--:10px;
+  --button-stroke--:4px #2C6EB6;
+}
+
+.title-font {
+  font-family: var(--title-font);
+}
+
+.main-font {
+  font-family: var(--main-font);
 }
 
 a {
@@ -35,6 +58,7 @@ h1 {
   line-height: 1.1;
 }
 
+
 button {
   border-radius: 8px;
   border: 1px solid transparent;
@@ -42,7 +66,7 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: var(--button-bg--);
   cursor: pointer;
   transition: border-color 0.25s;
 }
