@@ -1,14 +1,14 @@
 // App.jsx
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
-import GameBoard from "./pages/GameBoard";
+import App from "./App";
 
 function AppRouter() {
   return (
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/game" element={<GameBoard />} />
+        <Route path="/game" element={<App />} />
       </Routes>
     </Router>
   );
