@@ -12,11 +12,6 @@ Memory Game est un jeu de mémoire classique où les joueurs doivent retrouver d
 
 - Interface utilisateur intuitive et responsive
 - Animations fluides pour retourner les cartes
-- Compteur de coups pour suivre votre performance
-- Chronomètre pour mesurer votre temps de jeu
-- Système de score et tableau des meilleurs scores
-- Différents niveaux de difficulté (facile, moyen, difficile)
-- Thèmes personnalisables pour les cartes
 
 
 ## Processus pour achever ce projet :
@@ -27,8 +22,9 @@ Memory Game est un jeu de mémoire classique où les joueurs doivent retrouver d
             <li> Design des cartes</li>
                 <li>responsive Desing sur ordinateur , mobile et tablette </li>
 
-2- Trello : 
+2 - Architecture du projet :
 
-3- 
+public-----
+        
 
 
