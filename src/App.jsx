@@ -45,6 +45,24 @@ function App() {
     }
   };
 
+    useEffect(() => {
+    if (firstChoice && secondChoice) {
+      setDisabled(true);
+
+      if (firstChoice.name === secondChoice.name) {
+        setCards(prev =>
+          prev.map(card =>
+            card.name === firstChoice.name ? { ...card, matched: true } : card
+          )
+        );
+        resetTurn();
+      } else {
+        setTimeout(() => resetTurn(), 1000);
+      }
+    }
+  }, [firstChoice, secondChoice]);
+
+
 
 
 
