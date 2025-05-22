@@ -39,6 +39,13 @@ function App() {
     shuffleCards();
   }, []);
 
+    const handleChoice = (card) => {
+    if (!disabled) {
+      firstChoice ? setSecondChoice(card) : setFirstChoice(card);
+    }
+  };
+
+
 
 
 
