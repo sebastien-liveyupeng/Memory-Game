@@ -2,20 +2,21 @@
 import React, { useEffect, useState } from "react";
 import Header from "../components/Header";
 import Cards from "../components/Cards";
+import Footer from "../components/Footer";
 
 const images = [
-  "src/assets/img/pikachu.png",
-  "src/assets/img/eevee.png",
-  "src/assets/img/squirtle.png",
-  "src/assets/img/bulbasaur.png",
-  "src/assets/img/pikachu.png",
-  "src/assets/img/eevee.png",
-  "src/assets/img/squirtle.png",
-  "src/assets/img/bulbasaur.png",
-  "src/assets/img/pikachu.png",
-  "src/assets/img/eevee.png",
-  "src/assets/img/squirtle.png",
-  "src/assets/img/bulbasaur.png",
+  "src/assets/img/absol.png",
+  "src/assets/img/armaldo.png",
+  "src/assets/img/bulbizare.png",
+  "src/assets/img/chenipan.png",
+  "src/assets/img/electro.png",
+  "src/assets/img/fennekin.png",
+  "src/assets/img/gengar.png",
+  "src/assets/img/hericendre.png",
+  "src/assets/img/pachirisu.png",
+  "src/assets/img/phampy.png",
+  "src/assets/img/totodile.png",
+  "src/assets/img/vulpix.png",
 ];
 
 function shuffleArray(array) {
@@ -47,6 +48,7 @@ function Game() {
 
   return (
     <>
+      <title>Pokememory - Jeu</title>
       <Header />
       <div className="grid">
         {cards.map((card, index) => (
@@ -59,6 +61,7 @@ function Game() {
           />
         ))}
       </div>
+      <Footer />
     </>
   );
 }
