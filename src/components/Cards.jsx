@@ -5,20 +5,21 @@ function Cards({ cards, handleChoice, firstChoice, secondChoice, disabled }) {
   return (
     <>
       {cards.map((card) => (
-        <div
-          className={`card${isFlipped(card) ? " flipped" : ""}`}
-          key={card.id}
-          onClick={() => !disabled && handleChoice(card)}
-        >
-          <img 
-            className="card-image"
-            src={isFlipped(card) ? card.img : "/src/assets/img/card-back.png"}
-            alt={isFlipped(card) ? card.name : "Dos de carte"}
-          />
-        </div>
+      <div className={`card${isFlipped(card) ? " flipped" : ""}`} onClick={() => !disabled && handleChoice(card)}>
+  <div className="card-inner">
+    <div className="card-front">
+      <img src="/src/assets/img/card-back.png" alt="Dos de carte" />
+    </div>
+    <div className="card-back">
+      <img src={card.img} alt={card.name} />
+    </div>
+  </div>
+</div>
+
       ))}
     </>
   );
 }
+
 
 export default Cards;
