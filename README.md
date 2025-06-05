@@ -24,7 +24,7 @@ Memory Game est un jeu de mémoire classique où les joueurs doivent retrouver d
 
 ## 2 - Architecture du projet
 
-![Architecture](architecture.png)
+![Architecture](https://github.com/sebastien-liveyupeng/Memory-Game/blob/dev/public/architecture.png)
 
 
 

@@ -1,0 +1,340 @@
+/*  FONTS */
+@font-face {
+  font-family: 'Pokemon';
+  src: url('assets/fonts/Pokemon-Solid.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Sora';
+  src: url('assets/fonts/Sora-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --title-font: "Pokemon", fantasy, sans-serif;
+  --main-font: "Sora", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+
+  --primary-color: #3c493f;
+  --secondary-color: #1e352f;
+  --card-bg: #1e352f;
+  --text-color: #ffffff;
+  --text-color-secondary: #e0e0e0;
+
+  --button-bg: #ffcb00;
+  --button-bg-hover: #f5b800;
+  --button-text: #2a75bb;
+  --button-border: #2c6eb6;
+
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 2.5rem;
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s ease;
+  --transition-slow: 0.5s ease;
+
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.15);
+  --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  scrollbar-color: var(--button-bg) var(--card-bg);
+}
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  font-family: var(--main-font);
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  color: var(--text-color);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+header, footer {
+  background: linear-gradient(135deg, var(--secondary-color) 0%, #152b26 100%);
+  color: var(--text-color);
+  text-align: center;
+  padding: var(--spacing-sm);
+  box-shadow: var(--shadow-md);
+}
+
+footer a {
+  color: white;
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: rgba(255, 255, 255, 0.582);
+  text-decoration: underline;
+}
+
+.page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-lg);
+}
+
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--spacing-lg);
+  /* width: 100%; */
+}
+
+h1 {
+  text-align: center;
+  margin: var(--spacing-lg) 0;
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-family: var(--title-font);
+  color: var(--text-color);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  letter-spacing: 0.05em;
+}
+
+.button-container {
+  margin-top: var(--spacing-lg);
+  display: flex;
+  justify-content: center;
+}
+
+button {
+  display: block;
+  margin: var(--spacing-sm) auto;
+  padding: 0.75rem 2rem;
+  background-color: var(--button-bg);
+  color: var(--button-text);
+  font-size: 1.1rem;
+  font-weight: 600;
+  font-family: inherit;
+  border: 3px solid var(--button-border);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  box-shadow: var(--shadow-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  position: relative;
+  overflow: hidden;
+}
+
+button:hover {
+  background-color: var(--button-bg-hover);
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: var(--shadow-lg);
+}
+
+button:active {
+  transform: translateY(0) scale(0.98);
+  transition: all var(--transition-fast);
+}
+
+button:focus-visible {
+  outline: 2px solid var(--text-color);
+  outline-offset: 2px;
+}
+
+button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  transition: left var(--transition-normal);
+}
+
+button:hover::before {
+  left: 100%;
+}
+
+/*  CARTES  */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: var(--spacing-xl);
+  max-width: 1200px;
+  width: 100%;
+  padding: var(--spacing-sm);
+  justify-items: center;
+  justify-content: center;
+}
+
+.card {
+  width: 150px;
+  height: 150px;
+  perspective: 1500px;
+  cursor: pointer;
+}
+
+.card-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.8s cubic-bezier(0.45, 0.05, 0.55, 0.95);
+  will-change: transform;
+}
+
+.card.flipped .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-front {
+  transform: rotateY(0deg);
+  background-color: var(--card-bg);
+  z-index: 2;
+}
+
+.card-back {
+  transform: rotateY(180deg);
+  z-index: 1;
+}
+
+.card-front img,
+.card-back img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+  pointer-events: none;
+}
+
+/* ===== RESPONSIVE ===== */
+
+@media (min-width: 1400px) {
+  .card-grid {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  .card {
+    width: 160px;
+    height: 160px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1399px) {
+  .card-grid {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: var(--spacing-lg);
+  }
+
+  .card {
+    width: 140px;
+    height: 140px;
+  }
+}
+
+@media (max-width: 767px) {
+  main {
+    padding: var(--spacing-sm);
+  }
+
+  .card-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--spacing-md);
+    max-width: 500px;
+  }
+
+  .card {
+    width: 110px;
+    height: 110px;
+  }
+
+  button {
+    padding: 0.6rem 1.5rem;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    margin: var(--spacing-sm) 0;
+  }
+
+  .card-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-sm);
+    max-width: 360px;
+  }
+
+  .card {
+    width: 100px;
+    height: 100px;
+  }
+
+  button {
+    padding: 0.5rem 1.2rem;
+    font-size: 0.9rem;
+    margin: var(--spacing-xs) auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+*:focus-visible {
+  outline: 2px solid var(--button-bg);
+  outline-offset: 2px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text-color-secondary: #b0b0b0;
+  }
+}
